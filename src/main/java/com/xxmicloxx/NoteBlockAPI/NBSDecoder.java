@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 
 /**
@@ -17,9 +18,22 @@ import java.util.HashMap;
 public class NBSDecoder {
 
     public static Song parse(File decodeFile) {
+		try {
+			return parse(new FileInputStream(decodeFile), decodeFile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+    
+    public static Song parse(InputStream inputStream) {
+    	return parse(inputStream, null); // Source is unknown -> no file
+    }
+
+    private static Song parse(InputStream inputStream, File decodeFile) {
         HashMap<Integer, Layer> layerHashMap = new HashMap<Integer, Layer>();
         try {
-            DataInputStream dis = new DataInputStream(new FileInputStream(decodeFile));
+            DataInputStream dis = new DataInputStream(inputStream);
             short length = readShort(dis);
             short songHeight = readShort(dis);
             String title = readString(dis);
