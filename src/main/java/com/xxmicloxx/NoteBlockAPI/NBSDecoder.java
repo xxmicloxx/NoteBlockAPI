@@ -1,33 +1,21 @@
 package com.xxmicloxx.NoteBlockAPI;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.HashMap;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 26.03.13
- * Time: 11:40
- * To change this template use File | Settings | File Templates.
- */
 public class NBSDecoder {
 
     public static Song parse(File decodeFile) {
-		try {
-			return parse(new FileInputStream(decodeFile), decodeFile);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-    
+        try {
+            return parse(new FileInputStream(decodeFile), decodeFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static Song parse(InputStream inputStream) {
-    	return parse(inputStream, null); // Source is unknown -> no file
+        return parse(inputStream, null); // Source is unknown -> no file
     }
 
     private static Song parse(InputStream inputStream, File decodeFile) {
@@ -73,8 +61,8 @@ public class NBSDecoder {
             for (int i = 0; i < songHeight; i++) {
                 Layer l = layerHashMap.get(i);
                 if (l != null) {
-                	l.setName(readString(dis));
-                	l.setVolume(dis.readByte());
+                    l.setName(readString(dis));
+                    l.setVolume(dis.readByte());
                 }
             }
             return new Song(speed, layerHashMap, songHeight, length, title, author, description, decodeFile);
@@ -112,7 +100,7 @@ public class NBSDecoder {
     private static String readString(DataInputStream dis) throws IOException {
         int length = readInt(dis);
         StringBuilder sb = new StringBuilder(length);
-        for (;length > 0; --length) {
+        for (; length > 0; --length) {
             char c = (char) dis.readByte();
             if (c == (char) 0x0D) {
                 c = ' ';

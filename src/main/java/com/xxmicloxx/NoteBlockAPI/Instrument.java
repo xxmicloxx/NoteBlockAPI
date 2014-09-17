@@ -3,8 +3,9 @@ package com.xxmicloxx.NoteBlockAPI;
 import org.bukkit.Sound;
 
 public class Instrument {
-	public static Sound getInstrument(byte instrument) {
-		switch (instrument) {
+
+    public static Sound getInstrument(byte instrument) {
+        switch (instrument) {
             case 0:
                 return Sound.NOTE_PIANO;
             case 1:
@@ -17,8 +18,8 @@ public class Instrument {
                 return Sound.NOTE_STICKS;
             default:
                 return Sound.NOTE_PIANO;
-		}
-	}
+        }
+    }
 
     public static org.bukkit.Instrument getBukkitInstrument(byte instrument) {
         switch (instrument) {

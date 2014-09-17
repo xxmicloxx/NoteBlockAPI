@@ -3,13 +3,27 @@ package com.xxmicloxx.NoteBlockAPI;
 import java.util.Arrays;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 07.12.13
- * Time: 11:51
+ * <p>Static methods for doing useful math</p><hr>
+ *
+ * @author : $Author: brian $
+ * @version : $Revision: 1.1 $
+ *          <p/>
+ *          <hr><p><font size="-1" color="#336699"><a href="http://www.mbari.org">
+ *          The Monterey Bay Aquarium Research Institute (MBARI)</a> provides this
+ *          documentation and code &quot;as is&quot;, with no warranty, express or
+ *          implied, of its quality or consistency. It is provided without support and
+ *          without obligation on the part of MBARI to assist in its use, correction,
+ *          modification, or enhancement. This information should not be published or
+ *          distributed to third parties without specific written permission from
+ *          MBARI.</font></p><br>
+ *          <p/>
+ *          <font size="-1" color="#336699">Copyright 2002 MBARI.<br>
+ *          MBARI Proprietary Information. All rights reserved.</font><br><hr><br>
  */
 public class Interpolator {
-    public static double[] interpolateLinear(double[] x, double[] y, double[] xi) throws IllegalArgumentException {
+
+    public static double[] interpLinear(double[] x, double[] y, double[] xi) throws IllegalArgumentException {
+
         if (x.length != y.length) {
             throw new IllegalArgumentException("X and Y must be the same length");
         }
@@ -40,14 +54,12 @@ public class Interpolator {
         for (int i = 0; i < xi.length; i++) {
             if ((xi[i] > x[x.length - 1]) || (xi[i] < x[0])) {
                 yi[i] = Double.NaN;
-            }
-            else {
+            } else {
                 int loc = Arrays.binarySearch(x, xi[i]);
                 if (loc < -1) {
                     loc = -loc - 2;
                     yi[i] = slope[loc] * xi[i] + intercept[loc];
-                }
-                else {
+                } else {
                     yi[i] = y[loc];
                 }
             }
@@ -56,7 +68,22 @@ public class Interpolator {
         return yi;
     }
 
-    public static double interpolateLinear(double[] xy, double xx) {
+    public static double[] interpLinear(long[] x, double[] y, long[] xi) throws IllegalArgumentException {
+
+        double[] xd = new double[x.length];
+        for (int i = 0; i < x.length; i++) {
+            xd[i] = (double) x[i];
+        }
+
+        double[] xid = new double[xi.length];
+        for (int i = 0; i < xi.length; i++) {
+            xid[i] = (double) xi[i];
+        }
+
+        return interpLinear(xd, y, xid);
+    }
+
+    public static double interpLinear(double[] xy, double xx) {
         if (xy.length % 2 != 0) {
             throw new IllegalArgumentException("XY must be divisible by two.");
         }
@@ -69,6 +96,6 @@ public class Interpolator {
                 y[i/2] = xy[i];
             }
         }
-        return interpolateLinear(x, y, new double[] {xx})[0];
+        return interpLinear(x, y, new double[] {xx})[0];
     }
 }

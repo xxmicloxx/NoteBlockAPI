@@ -7,13 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 07.12.13
- * Time: 12:15
- */
 public abstract class SongPlayer {
+
     protected Song song;
     protected boolean playing = false;
     protected short tick = -1;
@@ -27,6 +22,11 @@ public abstract class SongPlayer {
     protected int fadeDuration = 60;
     protected int fadeDone = 0;
     protected FadeType fadeType = FadeType.FADE_LINEAR;
+
+    public SongPlayer(Song song) {
+        this.song = song;
+        createThread();
+    }
 
     public FadeType getFadeType() {
         return fadeType;
@@ -68,16 +68,11 @@ public abstract class SongPlayer {
         this.fadeDone = fadeDone;
     }
 
-    public SongPlayer(Song song) {
-        this.song = song;
-        createThread();
-    }
-
     protected void calculateFade() {
         if (fadeDone == fadeDuration) {
             return; // no fade today
         }
-        double targetVolume = Interpolator.interpolateLinear(new double[]{0, fadeStart, fadeDuration, fadeTarget}, fadeDone);
+        double targetVolume = Interpolator.interpLinear(new double[]{0, fadeStart, fadeDuration, fadeTarget}, fadeDone);
         setVolume((byte) targetVolume);
         fadeDone++;
     }
@@ -113,10 +108,10 @@ public abstract class SongPlayer {
                         }
                     }
                     long duration = System.currentTimeMillis() - startTime;
-                    float delayMillis = song.getDelay()*50;
+                    float delayMillis = song.getDelay() * 50;
                     if (duration < delayMillis) {
                         try {
-                            Thread.sleep((long) (delayMillis-duration));
+                            Thread.sleep((long) (delayMillis - duration));
                         } catch (InterruptedException e) {
                             // do nothing
                         }
@@ -147,15 +142,15 @@ public abstract class SongPlayer {
         }
     }
 
-    public void setAutoDestroy(boolean value) {
-        synchronized (this) {
-            autoDestroy = value;
-        }
-    }
-
     public boolean getAutoDestroy() {
         synchronized (this) {
             return autoDestroy;
+        }
+    }
+
+    public void setAutoDestroy(boolean value) {
+        synchronized (this) {
+            autoDestroy = value;
         }
     }
 
