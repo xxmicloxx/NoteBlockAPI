@@ -2,13 +2,8 @@ package com.xxmicloxx.NoteBlockAPI;
 
 import org.bukkit.entity.Player;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 07.12.13
- * Time: 12:26
- */
 public class RadioSongPlayer extends SongPlayer {
+
     public RadioSongPlayer(Song song) {
         super(song);
     }

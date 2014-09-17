@@ -1,12 +1,7 @@
 package com.xxmicloxx.NoteBlockAPI;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 26.03.13
- * Time: 14:17
- */
 public class Note {
+
     private byte instrument;
     private byte key;
 

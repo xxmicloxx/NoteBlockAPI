@@ -2,14 +2,8 @@ package com.xxmicloxx.NoteBlockAPI;
 
 import java.util.HashMap;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 26.03.13
- * Time: 14:16
- * To change this template use File | Settings | File Templates.
- */
 public class Layer {
+
     private HashMap<Integer, Note> hashMap = new HashMap<Integer, Note>();
     private byte volume = 100;
     private String name = "";

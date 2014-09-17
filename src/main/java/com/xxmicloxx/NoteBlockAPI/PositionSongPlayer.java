@@ -3,13 +3,8 @@ package com.xxmicloxx.NoteBlockAPI;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ml
- * Date: 07.12.13
- * Time: 12:37
- */
 public class PositionSongPlayer extends SongPlayer {
+
     private Location targetLocation;
 
     public PositionSongPlayer(Song song) {
