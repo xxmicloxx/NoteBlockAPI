@@ -6,34 +6,36 @@
 
     <groupId>com.xxmicloxx</groupId>
     <artifactId>NoteBlockAPI</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <version>1.8.7-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-
     <repositories>
-
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-
     </repositories>
-
     <dependencies>
-
         <dependency>
             <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
-            <version>1.7.9-R0.2-SNAPSHOT</version>
+            <artifactId>bukkit</artifactId>
+            <version>1.8.7-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
-
+    <distributionManagement>
+      <repository>
+         <id>sinndev-repo</id>
+         <name>Releases</name>
+         <url>http://repo.sinndev.com/content/repositories/releases/</url>
+      </repository>
+      <snapshotRepository>
+         <id>sinndev-repo</id>
+         <name>Snapshots</name>
+         <url>http://repo.sinndev.com/content/repositories/snapshots/</url>
+      </snapshotRepository>
+    </distributionManagement>
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -43,7 +45,6 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -57,8 +58,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
