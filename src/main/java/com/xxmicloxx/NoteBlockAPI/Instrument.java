@@ -16,6 +16,8 @@ public class Instrument {
                 return Sound.NOTE_SNARE_DRUM;
             case 4:
                 return Sound.NOTE_STICKS;
+            case 5:
+                return Sound.NOTE_PLING;
             default:
                 return Sound.NOTE_PIANO;
         }
@@ -33,6 +35,8 @@ public class Instrument {
                 return org.bukkit.Instrument.SNARE_DRUM;
             case 4:
                 return org.bukkit.Instrument.STICKS;
+            case 5:
+                return org.bukkit.Instrument.PLING;
             default:
                 return org.bukkit.Instrument.PIANO;
         }
