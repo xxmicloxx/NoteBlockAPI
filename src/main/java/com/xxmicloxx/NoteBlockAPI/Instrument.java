@@ -16,6 +16,8 @@ public class Instrument {
                 return Sound.NOTE_SNARE_DRUM;
             case 4:
                 return Sound.NOTE_STICKS;
+            case 5:
+                return Sound.NOTE_PLING;
             default:
                 return Sound.NOTE_PIANO;
         }
