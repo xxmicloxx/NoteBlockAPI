@@ -17,7 +17,15 @@ public class Instrument {
             case 4:
                 return Sound.BLOCK_NOTE_HAT;
             case 5:
-                return Sound.BLOCK_NOTE_PLING;
+                return Sound.BLOCK_NOTE_FLUTE;
+            case 6:
+                return Sound.BLOCK_NOTE_BELL;
+            case 7:
+                return Sound.BLOCK_NOTE_GUITAR;
+            case 8:
+                return Sound.BLOCK_NOTE_CHIME;
+            case 9:
+                return Sound.BLOCK_NOTE_XYLOPHONE;
             default:
                 return Sound.BLOCK_NOTE_HARP;
         }
@@ -35,9 +43,16 @@ public class Instrument {
                 return org.bukkit.Instrument.SNARE_DRUM;
             case 4:
                 return org.bukkit.Instrument.STICKS;
-            /* No equivalent instrument for the sound.
             case 5:
-                return org.bukkit.Instrument.PLING; */
+                return org.bukkit.Instrument.FLUTE;
+            case 6:
+                return org.bukkit.Instrument.BELL;
+            case 7:
+                return org.bukkit.Instrument.GUITAR;
+            case 8:
+                return org.bukkit.Instrument.CHIME;
+            case 9:
+                return org.bukkit.Instrument.XYLOPHONE;
             default:
                 return org.bukkit.Instrument.PIANO;
         }
