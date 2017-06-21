@@ -17,11 +17,11 @@ public class Instrument {
             case 4:
                 return Sound.BLOCK_NOTE_HAT;
             case 5:
-                return Sound.BLOCK_NOTE_FLUTE;
-            case 6:
-                return Sound.BLOCK_NOTE_BELL;
-            case 7:
                 return Sound.BLOCK_NOTE_GUITAR;
+            case 6:
+                return Sound.BLOCK_NOTE_FLUTE;
+            case 7:
+                return Sound.BLOCK_NOTE_BELL;
             case 8:
                 return Sound.BLOCK_NOTE_CHIME;
             case 9:
@@ -44,11 +44,11 @@ public class Instrument {
             case 4:
                 return org.bukkit.Instrument.STICKS;
             case 5:
-                return org.bukkit.Instrument.FLUTE;
-            case 6:
-                return org.bukkit.Instrument.BELL;
-            case 7:
                 return org.bukkit.Instrument.GUITAR;
+            case 6:
+                return org.bukkit.Instrument.FLUTE;
+            case 7:
+                return org.bukkit.Instrument.BELL;
             case 8:
                 return org.bukkit.Instrument.CHIME;
             case 9:
