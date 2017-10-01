@@ -11,8 +11,9 @@ public class Song {
 	
 	private HashMap<Integer, Layer> layerHashMap = Maps.newHashMap();
 	
-	private short songHeight, length;
 	private String title;
+	private short songHeight, length;
+	
 	private File path;
 	private String author, description;
 	private float speed, delay;
