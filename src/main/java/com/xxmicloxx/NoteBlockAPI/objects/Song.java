@@ -18,6 +18,10 @@ public class Song {
 	private String author, description;
 	private float speed, delay;
 	
+	/**
+	 * Clone a song
+	 * @param otherSong old and parent song
+	 */
 	public Song(Song otherSong) {
 		this.speed = otherSong.getSpeed();
 		delay = 20 / speed;
@@ -30,6 +34,17 @@ public class Song {
 		this.path = otherSong.getPath();
 	}
 	
+	/**
+	 * construct a song.
+	 * @param speed
+	 * @param layerHashMap
+	 * @param songHeight
+	 * @param length
+	 * @param title
+	 * @param author
+	 * @param description
+	 * @param path
+	 */
 	public Song(float speed, HashMap<Integer, Layer> layerHashMap,
 	            short songHeight, final short length, String title, String author,
 	            String description, File path) {
