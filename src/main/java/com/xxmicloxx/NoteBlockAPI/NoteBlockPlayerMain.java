@@ -1,5 +1,6 @@
 package com.xxmicloxx.NoteBlockAPI;
 
+import com.xxmicloxx.NoteBlockAPI.players.SongPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -10,8 +11,8 @@ import java.util.HashMap;
 public class NoteBlockPlayerMain extends JavaPlugin {
 
     public static NoteBlockPlayerMain plugin;
-    public HashMap<String, ArrayList<SongPlayer>> playingSongs = new HashMap<String, ArrayList<SongPlayer>>();
-    public HashMap<String, Byte> playerVolume = new HashMap<String, Byte>();
+    public HashMap<String, ArrayList<SongPlayer>> playingSongs = new HashMap<>();
+    public HashMap<String, Byte> playerVolume = new HashMap<>();
 
     public static boolean isReceivingSong(Player p) {
         return ((plugin.playingSongs.get(p.getName()) != null) && (!plugin.playingSongs.get(p.getName()).isEmpty()));
