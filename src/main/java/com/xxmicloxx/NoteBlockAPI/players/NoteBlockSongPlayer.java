@@ -1,5 +1,8 @@
-package com.xxmicloxx.NoteBlockAPI;
+package com.xxmicloxx.NoteBlockAPI.players;
 
+import com.xxmicloxx.NoteBlockAPI.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -11,18 +14,13 @@ import org.bukkit.entity.Player;
  * Time: 12:56
  */
 public class NoteBlockSongPlayer extends SongPlayer {
+    
+    @Getter
+    @Setter
     private Block noteBlock;
 
     public NoteBlockSongPlayer(Song song) {
         super(song);
-    }
-
-    public Block getNoteBlock() {
-        return noteBlock;
-    }
-
-    public void setNoteBlock(Block noteBlock) {
-        this.noteBlock = noteBlock;
     }
 
     @Override

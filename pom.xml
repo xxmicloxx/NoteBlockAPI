@@ -7,13 +7,27 @@
     <groupId>com.xxmicloxx</groupId>
     <artifactId>NoteBlockAPI</artifactId>
     <version>1.9.0</version>
+
     <repositories>
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
@@ -21,6 +35,7 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
     <distributionManagement>
       <repository>
          <id>sinndev-repo</id>
@@ -33,6 +48,7 @@
          <url>http://repo.sinndev.com/content/repositories/snapshots/</url>
       </snapshotRepository>
     </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
