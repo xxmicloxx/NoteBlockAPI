@@ -1,6 +1,10 @@
 package com.xxmicloxx.NoteBlockAPI.players;
 
 import com.xxmicloxx.NoteBlockAPI.*;
+import com.xxmicloxx.NoteBlockAPI.enums.NotePitch;
+import com.xxmicloxx.NoteBlockAPI.objects.Layer;
+import com.xxmicloxx.NoteBlockAPI.objects.Note;
+import com.xxmicloxx.NoteBlockAPI.objects.Song;
 import org.bukkit.entity.Player;
 
 public class RadioSongPlayer extends SongPlayer {

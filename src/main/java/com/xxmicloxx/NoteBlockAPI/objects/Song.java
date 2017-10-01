@@ -1,4 +1,4 @@
-package com.xxmicloxx.NoteBlockAPI;
+package com.xxmicloxx.NoteBlockAPI.objects;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;

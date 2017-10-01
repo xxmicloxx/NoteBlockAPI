@@ -1,4 +1,4 @@
-package com.xxmicloxx.NoteBlockAPI;
+package com.xxmicloxx.NoteBlockAPI.objects;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;
@@ -13,6 +13,10 @@ public class Layer {
 	private HashMap<Integer, Note> hashMap = Maps.newHashMap();
 	private byte volume = 100;
 	private String name = "";
+	
+	public Note getNote(int tick) {
+		return hashMap.get(tick);
+	}
 	
 	public void setNote(int tick, Note note) {
 		hashMap.put(tick, note);

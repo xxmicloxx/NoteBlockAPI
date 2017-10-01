@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.xxmicloxx.NoteBlockAPI.enums.FadeType;
 import com.xxmicloxx.NoteBlockAPI.Interpolator;
 import com.xxmicloxx.NoteBlockAPI.NoteBlockPlayerMain;
-import com.xxmicloxx.NoteBlockAPI.Song;
+import com.xxmicloxx.NoteBlockAPI.objects.Song;
 import com.xxmicloxx.NoteBlockAPI.events.SongDestroyingEvent;
 import com.xxmicloxx.NoteBlockAPI.events.SongEndEvent;
 import com.xxmicloxx.NoteBlockAPI.events.SongStoppedEvent;

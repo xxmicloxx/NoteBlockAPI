@@ -1,5 +1,9 @@
 package com.xxmicloxx.NoteBlockAPI;
 
+import com.xxmicloxx.NoteBlockAPI.objects.Layer;
+import com.xxmicloxx.NoteBlockAPI.objects.Note;
+import com.xxmicloxx.NoteBlockAPI.objects.Song;
+
 import java.io.*;
 import java.util.HashMap;
 

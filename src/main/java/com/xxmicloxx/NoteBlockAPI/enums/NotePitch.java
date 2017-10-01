@@ -1,4 +1,4 @@
-package com.xxmicloxx.NoteBlockAPI;
+package com.xxmicloxx.NoteBlockAPI.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

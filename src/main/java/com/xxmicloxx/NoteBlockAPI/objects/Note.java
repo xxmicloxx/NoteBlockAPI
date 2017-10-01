@@ -1,4 +1,4 @@
-package com.xxmicloxx.NoteBlockAPI;
+package com.xxmicloxx.NoteBlockAPI.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
