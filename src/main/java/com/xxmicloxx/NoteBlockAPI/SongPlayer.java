@@ -90,9 +90,9 @@ public abstract class SongPlayer {
                             tick++;
                             if (tick > song.getLength()) {
                                 if(loop){
-								    tick = 0;
-								    continue;
-							    }
+                                    tick = 0;
+                                    continue;
+                                }
                                 playing = false;
                                 tick = -1;
                                 SongEndEvent event = new SongEndEvent(SongPlayer.this);
@@ -147,22 +147,22 @@ public abstract class SongPlayer {
         }
     }
     public void setLoop(boolean loop) {
-		lock.lock();
-		try {
-			this.loop = loop;
-		} finally {
-			lock.unlock();
-		}
-	}
+        lock.lock();
+        try {
+        this.loop = loop;
+        } finally {
+            lock.unlock();
+        }
+    }
 
-	public boolean isLoop() {
-		lock.lock();
-		try {
-			return loop;
-		} finally {
-			lock.unlock();
-		}
-	}
+    public boolean isLoop() {
+        lock.lock();
+        try {
+            return loop;
+        } finally {
+            lock.unlock();
+        }
+    }
     public boolean getAutoDestroy() {
         synchronized (this) {
             return autoDestroy;
