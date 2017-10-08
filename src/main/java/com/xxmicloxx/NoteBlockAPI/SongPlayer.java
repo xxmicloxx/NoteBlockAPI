@@ -13,6 +13,7 @@ public abstract class SongPlayer {
     protected boolean playing = false;
     protected short tick = -1;
     protected ArrayList<String> playerList = new ArrayList<String>();
+    protected boolean loop;
     protected boolean autoDestroy = false;
     protected boolean destroyed = false;
     protected Thread playerThread;
@@ -88,6 +89,10 @@ public abstract class SongPlayer {
                             calculateFade();
                             tick++;
                             if (tick > song.getLength()) {
+                                if(loop){
+                                    tick = 0;
+                                    continue;
+                                }
                                 playing = false;
                                 tick = -1;
                                 SongEndEvent event = new SongEndEvent(SongPlayer.this);
@@ -141,7 +146,23 @@ public abstract class SongPlayer {
             }
         }
     }
+    public void setLoop(boolean loop) {
+        lock.lock();
+        try {
+        this.loop = loop;
+        } finally {
+            lock.unlock();
+        }
+    }
 
+    public boolean isLoop() {
+        lock.lock();
+        try {
+            return loop;
+        } finally {
+            lock.unlock();
+        }
+    }
     public boolean getAutoDestroy() {
         synchronized (this) {
             return autoDestroy;
