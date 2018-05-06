@@ -147,20 +147,16 @@ public abstract class SongPlayer {
         }
     }
     public void setLoop(boolean loop) {
-        lock.lock();
-        try {
-        this.loop = loop;
-        } finally {
-            lock.unlock();
+        synchronized (this)
+        {
+            this.loop = loop;
         }
     }
 
     public boolean isLoop() {
-        lock.lock();
-        try {
-            return loop;
-        } finally {
-            lock.unlock();
+        synchronized (this)
+        {
+            return this.loop;
         }
     }
     public boolean getAutoDestroy() {
